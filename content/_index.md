@@ -3,6 +3,7 @@
 title: "Nikola Veselinov"
 date: 2022-10-24
 type: landing
+<meta name="google-site-verification" content="-flXWYOOZuwHpk-Tp-p7X9qR3gYmBgTnkt0Cd5kpxr8" />
 
 design:
   # Default section spacing
