@@ -13,9 +13,10 @@ marketing:
   seo:
     site_type: Person
     local_business_type: ''
-    org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    org_name: 'Nikola Veselinov'
+    description: 'Nikola Veselinov is a mathematics student and researcher, currently in high school.'
+    keywords: 'Nikola Veselinov, mathematics, student, researcher, publications'
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -55,6 +56,6 @@ locale:
 # Site features
 features:
   math:
-    enable: false
+    enable: true
   privacy_pack:
     enable: false
