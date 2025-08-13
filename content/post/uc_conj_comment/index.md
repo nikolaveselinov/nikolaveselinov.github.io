@@ -1,7 +1,7 @@
 ---
-title: 👩🏼‍🏫 Teach academic courses
+title: A comment regarding the Union-closed sets conjecture
 summary: Embed videos, podcasts, code, LaTeX math, and even test students!
-date: 2023-10-24
+date: 2025-8-13
 math: true
 authors:
   - admin
