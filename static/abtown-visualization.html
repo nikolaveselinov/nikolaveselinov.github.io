@@ -19,7 +19,7 @@
   <div id="controls">
     <label>
       k:
-      <input type="number" id="k" value="1" min="1" step="1">
+      <input type="number" id="k" value="3" min="3" step="1">
     </label>
     <label>
       a:
@@ -49,25 +49,31 @@
     }
 
     function plotData(filtered) {
-      // Example: plot first two numeric columns
+      // Plot size vs n for fixed k
       if (filtered.length === 0) {
         Plotly.purge('plot');
         document.getElementById('plot').innerHTML = 'No data for selection.';
         return;
       }
-      const keys = Object.keys(filtered[0]).filter(k => !isNaN(filtered[0][k]));
-      if (keys.length < 2) {
-        document.getElementById('plot').innerHTML = 'Not enough numeric columns to plot.';
+      // Ensure 'n' and 'size' columns exist
+      if (!('n' in filtered[0]) || !('size' in filtered[0])) {
+        document.getElementById('plot').innerHTML = 'Columns "n" and "size" are required.';
         return;
       }
-      const x = filtered.map(row => Number(row[keys[0]]));
-      const y = filtered.map(row => Number(row[keys[1]]));
+      // Sort by n for better plot
+      filtered.sort((a, b) => a.n - b.n);
+      const x = filtered.map(row => row.n);
+      const y = filtered.map(row => row.size);
       Plotly.newPlot('plot', [{
-        x, y, mode: 'markers', type: 'scatter', marker: { size: 8 }
+        x,
+        y,
+        mode: 'lines+markers',
+        type: 'scatter',
+        marker: { size: 8 }
       }], {
-        xaxis: { title: keys[0] },
-        yaxis: { title: keys[1] },
-        title: `Scatter plot of ${keys[0]} vs ${keys[1]}`
+        xaxis: { title: 'n' },
+        yaxis: { title: 'size' },
+        title: `Size vs n for k = ${filtered[0].k}`
       });
     }
 
