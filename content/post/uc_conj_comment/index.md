@@ -1,7 +1,7 @@
 ---
 title: A comment regarding the Union-closed sets conjecture
 summary: Embed videos, podcasts, code, LaTeX math, and even test students!
-date: 2025-8-13
+date: 2025-08-13
 math: true
 authors:
   - admin
