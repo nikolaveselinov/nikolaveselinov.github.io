@@ -78,12 +78,13 @@
         marker: { size: 8 }
       }], {
         xaxis: { title: 'n' },
-        yaxis: { title: '|𝔽|' },
+        yaxis: { title: '$|\\mathcal{F}|$' }, // Use LaTeX for y-axis label
         title: ''
       });
-      document.getElementById('math-title').innerHTML =
-        `\\(|\\mathcal{F}|\\) vs \\(n\\) for \\(k = ${k},\\ (a,b) = (${a},${b})\\)`;
-      if (window.MathJax) MathJax.typesetPromise();
+      // Re-render MathJax for axis labels
+      setTimeout(() => {
+        if (window.MathJax) MathJax.typesetPromise();
+      }, 100);
     }
 
     function updateTable(filtered) {
