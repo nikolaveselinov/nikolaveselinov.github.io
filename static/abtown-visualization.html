@@ -24,6 +24,14 @@
       k:
       <input type="number" id="k" value="3" min="3" step="1">
     </label>
+    <label>
+      a:
+      <input type="number" id="a" value="0" step="1">
+    </label>
+    <label>
+      b:
+      <input type="number" id="b" value="0" step="1">
+    </label>
     <button id="update">Update Plot</button>
     <button id="download">Download CSV</button>
   </div>
@@ -35,19 +43,21 @@
     let headers = [];
     const csvUrl = '/uploads/abtown_dataset_computed.csv';
 
-    function filterData(k) {
-      // Filter for exact k, and only rows with numeric n and size
+    function filterData(k, a, b) {
+      // Filter for exact k, a, b, and only rows with numeric n and size
       return csvData.filter(row =>
         String(row.k) === String(k) &&
+        String(row.a) === String(a) &&
+        String(row.b) === String(b) &&
         !isNaN(row.n) &&
         !isNaN(row.size)
       );
     }
 
-    function plotData(filtered, k) {
+    function plotData(filtered, k, a, b) {
       Plotly.purge('plot');
       if (filtered.length === 0) {
-        document.getElementById('plot').innerHTML = 'No data for k = ' + k;
+        document.getElementById('plot').innerHTML = `No data for k = ${k}, a = ${a}, b = ${b}`;
         document.getElementById('math-title').innerHTML = '';
         return;
       }
@@ -71,7 +81,8 @@
         yaxis: { title: '|𝔽|' },
         title: ''
       });
-      document.getElementById('math-title').innerHTML = `\\(|\\mathcal{F}|\\) vs \\(n\\) for \\(k = ${k}\\)`;
+      document.getElementById('math-title').innerHTML =
+        `\\(|\\mathcal{F}|\\) vs \\(n\\) for \\(k = ${k},\\ (a,b) = (${a},${b})\\)`;
       if (window.MathJax) MathJax.typesetPromise();
     }
 
@@ -90,8 +101,10 @@
 
     function update() {
       const k = document.getElementById('k').value;
-      const filtered = filterData(k);
-      plotData(filtered, k);
+      const a = document.getElementById('a').value;
+      const b = document.getElementById('b').value;
+      const filtered = filterData(k, a, b);
+      plotData(filtered, k, a, b);
       updateTable(filtered.slice(0, 20));
     }
 
