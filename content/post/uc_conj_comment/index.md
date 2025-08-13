@@ -23,17 +23,7 @@ On this page, you'll find some examples of the types of technical content that c
 
 Teach your course by sharing videos with your students. Choose from one of the following approaches:
 
-**Youtube**:
-
-    {{</* youtube D2vj0WcvH5c */>}}
-
 {{< youtube D2vj0WcvH5c >}}
-
-**Bilibili**:
-
-    {{</* bilibili BV1WV4y1r7DF */>}}
-
-{{< bilibili BV1WV4y1r7DF >}}
 
 **Video file**
 
