@@ -1,5 +1,5 @@
 ---
-title: A comment regarding the Union-closed sets conjecture
+title: A note regarding the union-closed sets conjecture
 summary: Embed videos, podcasts, code, LaTeX math, and even test students!
 date: 2025-08-13
 math: true
