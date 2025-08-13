@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>abtown_dataset_computed Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    #controls { margin-bottom: 2em; }
+    label { margin-right: 1em; }
+    #plot { width: 100%; max-width: 900px; height: 500px; }
+    #download { margin-left: 2em; }
+  </style>
+</head>
+<body>
+  <h1>abtown_dataset_computed.csv Visualization</h1>
+  <div id="controls">
+    <label>
+      k:
+      <input type="number" id="k" value="1" min="1" step="1">
+    </label>
+    <label>
+      a:
+      <input type="number" id="a" value="0" step="any">
+    </label>
+    <label>
+      b:
+      <input type="number" id="b" value="1" step="any">
+    </label>
+    <button id="update">Update Plot</button>
+    <button id="download">Download CSV</button>
+  </div>
+  <div id="plot"></div>
+  <div id="table"></div>
+  <script>
+    let csvData = [];
+    let headers = [];
+    const csvUrl = '/uploads/abtown_dataset_computed.csv';
+
+    function filterData(k, a, b) {
+      // Example: filter by k, a, b columns if present
+      return csvData.filter(row =>
+        (!row.k || row.k == k) &&
+        (!row.a || row.a >= a) &&
+        (!row.b || row.b <= b)
+      );
+    }
+
+    function plotData(filtered) {
+      // Example: plot first two numeric columns
+      if (filtered.length === 0) {
+        Plotly.purge('plot');
+        document.getElementById('plot').innerHTML = 'No data for selection.';
+        return;
+      }
+      const keys = Object.keys(filtered[0]).filter(k => !isNaN(filtered[0][k]));
+      if (keys.length < 2) {
+        document.getElementById('plot').innerHTML = 'Not enough numeric columns to plot.';
+        return;
+      }
+      const x = filtered.map(row => Number(row[keys[0]]));
+      const y = filtered.map(row => Number(row[keys[1]]));
+      Plotly.newPlot('plot', [{
+        x, y, mode: 'markers', type: 'scatter', marker: { size: 8 }
+      }], {
+        xaxis: { title: keys[0] },
+        yaxis: { title: keys[1] },
+        title: `Scatter plot of ${keys[0]} vs ${keys[1]}`
+      });
+    }
+
+    function updateTable(filtered) {
+      let html = '<table border="1" cellpadding="4"><tr>';
+      headers.forEach(h => html += `<th>${h}</th>`);
+      html += '</tr>';
+      filtered.forEach(row => {
+        html += '<tr>';
+        headers.forEach(h => html += `<td>${row[h]}</td>`);
+        html += '</tr>';
+      });
+      html += '</table>';
+      document.getElementById('table').innerHTML = html;
+    }
+
+    function update() {
+      const k = document.getElementById('k').value;
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const filtered = filterData(k, a, b);
+      plotData(filtered);
+      updateTable(filtered.slice(0, 20)); // show first 20 rows
+    }
+
+    document.getElementById('update').onclick = update;
+    document.getElementById('download').onclick = function() {
+      saveAs(new Blob([Papa.unparse(csvData)], {type: "text/csv;charset=utf-8"}), "abtown_dataset_computed.csv");
+    };
+
+    Papa.parse(csvUrl, {
+      download: true,
+      header: true,
+      dynamicTyping: true,
+      complete: function(results) {
+        csvData = results.data;
+        headers = results.meta.fields;
+        update();
+      }
+    });
+  </script>
+</body>
+</html>
