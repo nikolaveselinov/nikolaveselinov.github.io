@@ -18,7 +18,7 @@
   </style>
 </head>
 <body>
-  <h1>Visualization of extremal sizes of $(a,b)$-town families $\mathcal{F}\subseteq\mathscr{P}(n)$</h1>
+  <h1 id="main-title"></h1>
   <div id="controls">
     <label>
       k:
@@ -51,12 +51,18 @@
         document.getElementById('math-title').innerHTML = '';
         return;
       }
-      filtered.sort((a, b) => a.n - b.n);
-      const x = filtered.map(row => row.n);
-      const y = filtered.map(row => row.size);
+      // Aggregate: for each n, pick the maximum size
+      const nToSize = {};
+      filtered.forEach(row => {
+        if (!(row.n in nToSize) || row.size > nToSize[row.n]) {
+          nToSize[row.n] = row.size;
+        }
+      });
+      const nVals = Object.keys(nToSize).map(Number).sort((a, b) => a - b);
+      const sizeVals = nVals.map(n => nToSize[n]);
       Plotly.newPlot('plot', [{
-        x,
-        y,
+        x: nVals,
+        y: sizeVals,
         mode: 'lines+markers',
         type: 'scatter',
         marker: { size: 8 }
@@ -65,7 +71,6 @@
         yaxis: { title: '|𝔽|' },
         title: ''
       });
-      // Add MathJax-rendered title
       document.getElementById('math-title').innerHTML = `\\(|\\mathcal{F}|\\) vs \\(n\\) for \\(k = ${k}\\)`;
       if (window.MathJax) MathJax.typesetPromise();
     }
@@ -105,6 +110,11 @@
         update();
       }
     });
+
+    // Set the main title with LaTeX and render it
+    document.getElementById('main-title').innerHTML =
+      'Visualization of extremal sizes of \\((a,b)\\)-town families \\(\\mathcal{F} \\subseteq \\mathscr{P}(n)\\)';
+    if (window.MathJax) MathJax.typesetPromise();
   </script>
 </body>
 </html>
