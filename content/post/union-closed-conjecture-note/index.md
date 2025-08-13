@@ -6,9 +6,10 @@ math: true
 authors:
   - admin
 tags:
-  - Hugo
-  - Hugo Blox Builder
-  - Markdown
+  - Research note
+  - Set theory
+  - Union-closed sets conjecture
+  - Extremal set theory
 image:
   caption: 'Embed rich media such as videos and LaTeX math'
 ---
