@@ -6,12 +6,15 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     body { font-family: sans-serif; margin: 2em; }
     #controls { margin-bottom: 2em; }
     label { margin-right: 1em; }
     #plot { width: 100%; max-width: 900px; height: 500px; }
     #download { margin-left: 2em; }
+    .math-title { font-size: 1.2em; margin-bottom: 0.5em; }
   </style>
 </head>
 <body>
@@ -21,46 +24,33 @@
       k:
       <input type="number" id="k" value="3" min="3" step="1">
     </label>
-    <label>
-      a:
-      <input type="number" id="a" value="0" step="any">
-    </label>
-    <label>
-      b:
-      <input type="number" id="b" value="1" step="any">
-    </label>
     <button id="update">Update Plot</button>
     <button id="download">Download CSV</button>
   </div>
   <div id="plot"></div>
+  <div class="math-title" id="math-title"></div>
   <div id="table"></div>
   <script>
     let csvData = [];
     let headers = [];
     const csvUrl = '/uploads/abtown_dataset_computed.csv';
 
-    function filterData(k, a, b) {
-      // Example: filter by k, a, b columns if present
+    function filterData(k) {
+      // Filter for exact k, and only rows with numeric n and size
       return csvData.filter(row =>
-        (!row.k || row.k == k) &&
-        (!row.a || row.a >= a) &&
-        (!row.b || row.b <= b)
+        String(row.k) === String(k) &&
+        !isNaN(row.n) &&
+        !isNaN(row.size)
       );
     }
 
-    function plotData(filtered) {
-      // Plot size vs n for fixed k
+    function plotData(filtered, k) {
+      Plotly.purge('plot');
       if (filtered.length === 0) {
-        Plotly.purge('plot');
-        document.getElementById('plot').innerHTML = 'No data for selection.';
+        document.getElementById('plot').innerHTML = 'No data for k = ' + k;
+        document.getElementById('math-title').innerHTML = '';
         return;
       }
-      // Ensure 'n' and 'size' columns exist
-      if (!('n' in filtered[0]) || !('size' in filtered[0])) {
-        document.getElementById('plot').innerHTML = 'Columns "n" and "size" are required.';
-        return;
-      }
-      // Sort by n for better plot
       filtered.sort((a, b) => a.n - b.n);
       const x = filtered.map(row => row.n);
       const y = filtered.map(row => row.size);
@@ -72,9 +62,12 @@
         marker: { size: 8 }
       }], {
         xaxis: { title: 'n' },
-        yaxis: { title: 'size' },
-        title: `Size vs n for k = ${filtered[0].k}`
+        yaxis: { title: '|𝔽|' },
+        title: ''
       });
+      // Add MathJax-rendered title
+      document.getElementById('math-title').innerHTML = `\\(|\\mathcal{F}|\\) vs \\(n\\) for \\(k = ${k}\\)`;
+      if (window.MathJax) MathJax.typesetPromise();
     }
 
     function updateTable(filtered) {
@@ -92,11 +85,9 @@
 
     function update() {
       const k = document.getElementById('k').value;
-      const a = parseFloat(document.getElementById('a').value);
-      const b = parseFloat(document.getElementById('b').value);
-      const filtered = filterData(k, a, b);
-      plotData(filtered);
-      updateTable(filtered.slice(0, 20)); // show first 20 rows
+      const filtered = filterData(k);
+      plotData(filtered, k);
+      updateTable(filtered.slice(0, 20));
     }
 
     document.getElementById('update').onclick = update;
