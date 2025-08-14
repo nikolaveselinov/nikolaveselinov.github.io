@@ -16,11 +16,13 @@ image:
 
 ## Introduction
 
+The union-closed sets conjecture is a famous open problem in set theory.
+
+A famly of sets is said to be _union-closed_ if the union of any two sets from the family belongs to it.
+
 {{< conjecture "Frankl, 1979" >}}
 
 {{< /conjecture >}}
-
-Teach your course by sharing videos with your students. Choose from one of the following approaches:
 
 {{< youtube veMx-r1iQpY >}}
 
