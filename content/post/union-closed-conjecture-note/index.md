@@ -28,7 +28,11 @@ Let's switch to formal notation. Let $\mathcal{F}\subseteq\mathscr{P}(n)$ be a f
 $$
 d_x:=|\{i\in[m]:x\in F_i\}|
 $$
-and the _normalized degree_ as $\tilde d_x=\frac{d_x}{m}$.
+and the _normalized degree_ as $\tilde d_x=\frac{d_x}{m}$. Also define the _pair count_ of $x$ as
+$$
+p_x:=|\{(A,B)\in\mathcal{F}\times\mathcal{F}:x\in A\cup B\}|
+$$
+and the _normalized pair count_ as $\tilde p_x=\frac{p_x}{m^2}$.
 
 {{< youtube veMx-r1iQpY >}}
 
