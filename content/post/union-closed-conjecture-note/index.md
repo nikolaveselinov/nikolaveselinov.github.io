@@ -39,11 +39,13 @@ $$
 $$
 {{< /conjecture >}}
 
-A recent development has been the proof of $\max_{i\in[n]}\tilde d_i\geq c$ for the constant $c=0.01$ (see the video below for an explanation from the author of the paper, [arXiv:2211.09055v2](https://arxiv.org/abs/2211.09055v2)), later improved to $c\approx0.3823455$ ([arXiv:2212.12500v2](https://arxiv.org/abs/2212.12500v2)).
+A recent development has been the proof of $\max_{i\in[n]}\tilde d_i\geq c$ for the constant $c=0.01$ (see the video below for an explanation from the author of the paper, [arXiv:2211.09055v2](https://arxiv.org/abs/2211.09055v2)), later improved to $c\approx0.3823455$ ([arXiv:2212.12500v2](https://arxiv.org/abs/2212.12500v2)). This approach looks very promising.
 
 {{< youtube veMx-r1iQpY >}}
 
-Also define the _pair count_ of $x$ as
+We aim to establish a necessary condition under the assumption that Frankl's conjecture is false. While this condition is not strong enough to prove the conjecture and is weaker than [Reimer's average set size theorem](https://www.semanticscholar.org/paper/An-Average-Set-Size-Theorem-Reimer/8bd3cddbc4e5d2f4050c299132cba5fa571502b4?utm_source=direct_link) -- in fact, it does not even use the union-closedness -- the method of proof is elegant.
+
+Define the _pair count_ of $x$ as
 $$
 p_x:=|\{(A,B)\in\mathcal{F}\times\mathcal{F}:x\in A\cup B\}|
 $$
