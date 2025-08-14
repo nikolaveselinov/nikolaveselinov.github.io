@@ -43,7 +43,7 @@ A recent development has been the proof of $\max_{i\in[n]}\tilde d_i\geq c$ for 
 
 {{< youtube veMx-r1iQpY >}}
 
-We aim to establish a necessary condition under the assumption that Frankl's conjecture is false. While this condition is not strong enough to prove the conjecture and is weaker than [Reimer's average set size theorem](https://www.semanticscholar.org/paper/An-Average-Set-Size-Theorem-Reimer/8bd3cddbc4e5d2f4050c299132cba5fa571502b4?utm_source=direct_link) -- in fact, it does not even use the union-closedness -- the method of proof is elegant.
+We aim to establish a necessary condition under the assumption that Frankl's conjecture is false. While this condition is not strong enough to prove the conjecture and is weaker than [Reimer's average set size theorem](https://www.semanticscholar.org/paper/An-Average-Set-Size-Theorem-Reimer/8bd3cddbc4e5d2f4050c299132cba5fa571502b4?utm_source=direct_link) -- in fact, it does not even rely on union-closedness -- the method of proof is elegant.
 
 Define the _pair count_ of $x$ as
 $$
