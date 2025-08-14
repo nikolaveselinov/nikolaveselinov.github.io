@@ -26,6 +26,22 @@ Teach your course by sharing videos with your students. Choose from one of the f
 If $n$ is odd, then $n^2$ is odd.
 {{< /theorem >}}
 
+{{< lemma >}}
+Let $n$ be even. Then $n^2$ is even.
+{{< /lemma >}}
+
+{{< conjecture >}}
+There are infinitely many twin primes.
+{{< /conjecture >}}
+
+{{< corollary >}}
+If $n$ is even, then $n^2$ is even.
+{{< /corollary >}}
+
+{{< proposition >}}
+The sum of two even numbers is even.
+{{< /proposition >}}
+
 {{< spoiler text="👉 Click to view the solution" >}} You found me 🎉 {{< /spoiler >}}
 
 ## Math
