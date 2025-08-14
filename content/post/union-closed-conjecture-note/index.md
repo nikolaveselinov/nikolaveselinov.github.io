@@ -21,7 +21,7 @@ The union-closed sets conjecture is a famous open problem in set theory.
 A famly of sets is said to be _union-closed_ if the union of any two sets from the family belongs to it.
 
 {{< conjecture "Frankl, 1979" >}}
-
+For every union-closed family containing a non-empty set there exists an element that belongs to at least half of the sets in the family.
 {{< /conjecture >}}
 
 {{< youtube veMx-r1iQpY >}}
