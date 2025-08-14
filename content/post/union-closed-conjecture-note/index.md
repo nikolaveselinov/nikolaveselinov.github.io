@@ -1,6 +1,6 @@
 ---
-title: A necessary condition regarding the union-closed sets conjecture
-summary: Embed videos, podcasts, code, LaTeX math, and even test students!
+title: A note regarding the union-closed sets conjecture
+summary: We present an upper bound on average set size using double counting.
 date: 2025-08-13
 math: true
 authors:
@@ -28,18 +28,6 @@ $$
 If $n$ is odd, then $n^2$ is odd.
 \end{theorem}
 $$
-
-## Test students
-
-Provide a simple yet fun self-assessment by revealing the solutions to challenges with the `spoiler` shortcode:
-
-```markdown
-{{</* spoiler text="👉 Click to view the solution" */>}}
-You found me!
-{{</* /spoiler */>}}
-```
-
-renders as
 
 {{< spoiler text="👉 Click to view the solution" >}} You found me 🎉 {{< /spoiler >}}
 
