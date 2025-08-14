@@ -39,6 +39,9 @@ $$
 $$
 {{< /conjecture >}}
 
+A recent development has been the proof of $\max_{i\in[n]}\tilde d_i\geq c$ for a constant $c=0.01$, later improved to $c\approx0.3823455$ ([arXiv:2212.12500v2](https://arxiv.org/abs/2212.12500v2)).
+
+
 {{< youtube veMx-r1iQpY >}}
 
 Also define the _pair count_ of $x$ as
