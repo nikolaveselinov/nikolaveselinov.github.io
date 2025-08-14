@@ -22,12 +22,9 @@ Teach your course by sharing videos with your students. Choose from one of the f
 
 {{< youtube veMx-r1iQpY >}}
 
-$$
-\newtheorem{theorem}{Theorem}
-\begin{theorem}
+{{< theorem >}}
 If $n$ is odd, then $n^2$ is odd.
-\end{theorem}
-$$
+{{< /theorem >}}
 
 {{< spoiler text="👉 Click to view the solution" >}} You found me 🎉 {{< /spoiler >}}
 
