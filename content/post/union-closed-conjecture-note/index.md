@@ -1,5 +1,5 @@
 ---
-title: A note regarding the union-closed sets conjecture
+title: A necessary condition regarding the union-closed sets conjecture
 summary: Embed videos, podcasts, code, LaTeX math, and even test students!
 date: 2025-08-13
 math: true
@@ -14,32 +14,20 @@ image:
   caption: 'Embed rich media such as videos and LaTeX math'
 ---
 
-[Hugo Blox Builder](https://hugoblox.com) is designed to give technical content creators a seamless experience. You can focus on the content and the Hugo Blox Builder which this template is built upon handles the rest.
-
-**Embed videos, podcasts, code, LaTeX math, and even test students!**
-
-On this page, you'll find some examples of the types of technical content that can be rendered with Hugo Blox.
-
 ## Introduction
+
+
 
 Teach your course by sharing videos with your students. Choose from one of the following approaches:
 
 {{< youtube veMx-r1iQpY >}}
 
 $$
+\newtheorem{theorem}{Theorem}
 \begin{theorem}
+If $n$ is odd, then $n^2$ is odd.
 \end{theorem}
 $$
-
-## Podcast
-
-You can add a podcast or music to a page by placing the MP3 file in the page's folder or the media library folder and then embedding the audio on your page with the _audio_ shortcode:
-
-    {{</* audio src="ambient-piano.mp3" */>}}
-
-Try it out:
-
-{{< audio src="ambient-piano.mp3" >}}
 
 ## Test students
 
