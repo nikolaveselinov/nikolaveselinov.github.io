@@ -22,3 +22,15 @@
 .conjecture strong { color: #f9844a; }
 .corollary strong  { color: #7209b7; }
 .proposition strong{ color: #4361ee; }
+.proof {
+  border-left: 4px solid #222;
+  background: #f9f9f9;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  font-size: 1.05em;
+}
+.proof em {
+  color: #222;
+  margin-right: 0.5em;
+}
