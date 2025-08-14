@@ -59,6 +59,11 @@ $\tilde p_x=2\tilde d_x-\tilde d_x^2$.
 You found me 🎉
 {{< /spoiler >}}
 
+Define the average set size
+$$
+S:=\frac{1}{m}\sum_{F\in\mathcal{F}}|F|=\sum_{i=1}^n\tilde d_i\text{.}
+$$
+
 {{< proposition >}}
 The sum of two even numbers is even.
 {{< /proposition >}}
