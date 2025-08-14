@@ -51,23 +51,19 @@ p_x:=|\{(A,B)\in\mathcal{F}\times\mathcal{F}:x\in A\cup B\}|
 $$
 and the _normalized pair count_ as $\tilde p_x=\frac{p_x}{m^2}$.
 
-{{< theorem >}}
-If $n$ is odd, then $n^2$ is odd.
-{{< /theorem >}}
-
 {{< lemma >}}
-Let $n$ be even. Then $n^2$ is even.
+$\tilde p_x=2\tilde d_x-\tilde d_x^2$.
 {{< /lemma >}}
 
-{{< corollary >}}
-If $n$ is even, then $n^2$ is even.
-{{< /corollary >}}
+{{< spoiler text="Proof" >}}
+You found me 🎉
+{{< /spoiler >}}
 
 {{< proposition >}}
 The sum of two even numbers is even.
 {{< /proposition >}}
 
-{{< spoiler text="👉 Click to view the solution" >}} You found me 🎉 {{< /spoiler >}}
+
 
 ## Math
 
