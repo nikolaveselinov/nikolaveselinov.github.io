@@ -16,7 +16,7 @@ image:
 
 ## Introduction
 
-{{< conjecture >}}
+{{< conjecture "Frankl, 1979" >}}
 
 {{< /conjecture >}}
 
