@@ -55,8 +55,10 @@ and the _normalized pair count_ as $\tilde p_x=\frac{p_x}{m^2}$.
 $\tilde p_x=2\tilde d_x-\tilde d_x^2$.
 {{< /lemma >}}
 
-{{< spoiler text="_Proof_" >}}
-You found me 🎉
+{{< spoiler text="Proof" >}}
+{{< proof >}}
+The sum of two even numbers is even.
+{{< /proof >}}
 {{< /spoiler >}}
 
 Define the average set size
