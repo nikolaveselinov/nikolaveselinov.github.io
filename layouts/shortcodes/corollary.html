@@ -1,3 +1,6 @@
 <div class="corollary">
-  <strong>Corollary.</strong> {{ .Inner }}
+  <strong>
+    Corollary{{ with .Get 0 }} ({{ . }}){{ end }}.
+  </strong>
+  {{ .Inner }}
 </div>

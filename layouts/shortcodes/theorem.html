@@ -1,3 +1,6 @@
 <div class="theorem">
-  <strong>Theorem.</strong> {{ .Inner }}
+  <strong>
+    Theorem{{ with .Get 0 }} ({{ . }}){{ end }}.
+  </strong>
+  {{ .Inner }}
 </div>

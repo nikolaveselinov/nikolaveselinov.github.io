@@ -1,3 +1,6 @@
 <div class="proposition">
-  <strong>Proposition.</strong> {{ .Inner }}
+  <strong>
+    Proposition{{ with .Get 0 }} ({{ . }}){{ end }}.
+  </strong>
+  {{ .Inner }}
 </div>

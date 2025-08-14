@@ -1,3 +1,6 @@
 <div class="conjecture">
-  <strong>Conjecture.</strong> {{ .Inner }}
+  <strong>
+    Conjecture{{ with .Get 0 }} ({{ . }}){{ end }}.
+  </strong>
+  {{ .Inner }}
 </div>

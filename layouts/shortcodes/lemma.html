@@ -1,3 +1,6 @@
 <div class="lemma">
-  <strong>Lemma.</strong> {{ .Inner }}
+  <strong>
+    Lemma{{ with .Get 0 }} ({{ . }}){{ end }}.
+  </strong>
+  {{ .Inner }}
 </div>

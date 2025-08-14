@@ -16,7 +16,9 @@ image:
 
 ## Introduction
 
+{{< conjecture >}}
 
+{{< /conjecture >}}
 
 Teach your course by sharing videos with your students. Choose from one of the following approaches:
 
@@ -29,10 +31,6 @@ If $n$ is odd, then $n^2$ is odd.
 {{< lemma >}}
 Let $n$ be even. Then $n^2$ is even.
 {{< /lemma >}}
-
-{{< conjecture >}}
-There are infinitely many twin primes.
-{{< /conjecture >}}
 
 {{< corollary >}}
 If $n$ is even, then $n^2$ is even.
