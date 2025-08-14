@@ -67,7 +67,7 @@ S:=\frac{1}{m}\sum_{F\in\mathcal{F}}|F|=\sum_{i=1}^n\tilde d_i\text{.}
 $$
 
 {{< proposition >}}
-The sum of two even numbers is even.
+If $\tilde d_i<\frac{1}{2}$ for every $i\in[n]$, then $S<\frac{n}{2}$.
 {{< /proposition >}}
 
 {{< proof >}}
