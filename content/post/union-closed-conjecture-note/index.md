@@ -24,10 +24,11 @@ A family of sets is said to be _union-closed_ if the union of any two sets from 
 For every union-closed family containing a non-empty set there exists an element that belongs to at least half of the sets in the family.
 {{< /conjecture >}}
 
-Let's switch to formal notation. Let $\mathcal{F}\subseteq\mathscr{P}(n)$ be a family of subsets of $[n]=\{1,2,\ldots,n\}$. For each $x\in[n]$ define the _degree_ of $x$ in $\mathcal{F}$ as the number of sets containing $x$:
+Let's switch to formal notation. Let $\mathcal{F}\subseteq\mathscr{P}(n)$ be a family of subsets of $[n]=\{1,2,\ldots,n\}$ and denote $m=|\mathcal{F}|$. For each $x\in[n]$ define the _degree_ of $x$ in $\mathcal{F}$ as the number of sets containing $x$:
 $$
 d_x:=|\{i\in[m]:x\in F_i\}|
 $$
+and the _normalized degree_ as $\tilde d_x=\frac{d_x}{m}$.
 
 {{< youtube veMx-r1iQpY >}}
 
