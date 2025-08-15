@@ -56,9 +56,7 @@ $\tilde p_x=2\tilde d_x-\tilde d_x^2$.
 {{< /lemma >}}
 
 {{< spoiler text="Proof" >}}
-{{< proof >}}
 The sum of two even numbers is even.
-{{< /proof >}}
 {{< /spoiler >}}
 
 Define the average set size
