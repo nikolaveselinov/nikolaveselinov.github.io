@@ -10,8 +10,6 @@ tags:
   - Set theory
   - Union-closed sets conjecture
   - Extremal set theory
-image:
-  caption: 'Embed rich media such as videos and LaTeX math'
 ---
 
 ## Introduction
