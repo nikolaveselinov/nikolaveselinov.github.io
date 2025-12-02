@@ -7,6 +7,7 @@ date: '2025-01-01'
 publishDate: '2025-10-23T19:21:59.629951Z'
 publication_types:
 - manuscript
+- preprint
 abstract: A family $\mathcal F\subseteq\mathcal P(n)$ is an $(a,b)$-town$\pmod{k}$ if all sets
   in it have cardinality $a\pmod k$ and all pairwise intersections in it have cardinality
   $b\pmod k$. For $k=2$ the maximal size of such a family is known for each $a,b$, while
