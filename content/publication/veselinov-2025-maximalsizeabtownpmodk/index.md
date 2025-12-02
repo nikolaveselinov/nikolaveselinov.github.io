@@ -1,5 +1,5 @@
 ---
-title: On the maximal size of $(a,b)$-town$\pmod k$ families
+title: On the maximal size of $(a,b)$-town $\pmod k$ families
 authors:
 - Nikola Veselinov
 - Miroslav Marinov
