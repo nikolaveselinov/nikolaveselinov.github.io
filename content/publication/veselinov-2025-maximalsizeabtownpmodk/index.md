@@ -19,6 +19,4 @@ abstract: A family $\mathcal F\subseteq\mathcal P(n)$ is an $(a,b)$-town$\pmod{k
 links:
 - name: arXiv
   url: https://arxiv.org/abs/2510.00251
-- name: URL
-  url: https://arxiv.org/abs/2510.00251
 ---
