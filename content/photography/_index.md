@@ -12,11 +12,6 @@ sections:
       title: Photography
       text: |
         A collection of photographs capturing moments and landscapes.
-  - block: gallery
-    content:
-      folders:
-        - uploads/photos
-    design:
-      columns: 3
-      view: masonry
+        
+        ![Photo](/uploads/photos/DJI_0563.JPG)
 ---
