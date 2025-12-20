@@ -167,4 +167,4 @@ awards:
 
 About-Me
 
-Check out my [Photography](/photography) collection.
+You may also want to check out my [Photography](/photography) collection.
