@@ -166,3 +166,5 @@ awards:
 ## Biography
 
 About-Me
+
+Check out my [Photography](/photography) collection.
