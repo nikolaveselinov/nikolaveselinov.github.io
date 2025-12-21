@@ -11,7 +11,7 @@ sections:
     content:
       title: Photography
       text: |
-        A collection of photographs capturing moments and landscapes.
+        A collection of drone photographs capturing some of my favourite moments and landscapes.
         
         ![Photo](/uploads/photos/DJI_0563.JPG)
 ---
