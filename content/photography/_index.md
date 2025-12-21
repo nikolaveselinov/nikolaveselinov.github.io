@@ -60,6 +60,11 @@ sections:
           <img src="/uploads/photos/Malo Buchino/malobuchino-001.jpg" alt="Malo Buchino 1">
           <img src="/uploads/photos/Malo Buchino/malobuchino-002.jpg" alt="Malo Buchino 2">
           <img src="/uploads/photos/Malo Buchino/malobuchino-003.jpg" alt="Malo Buchino 3">
+          <img src="/uploads/photos/Malo Buchino/malobuchino-004.jpg" alt="Malo Buchino 4">
+          <img src="/uploads/photos/Malo Buchino/malobuchino-005.jpg" alt="Malo Buchino 5">
+          <img src="/uploads/photos/Malo Buchino/malobuchino-006.jpg" alt="Malo Buchino 6">
+          <img src="/uploads/photos/Malo Buchino/malobuchino-007.jpg" alt="Malo Buchino 7">
+          <img src="/uploads/photos/Malo Buchino/malobuchino-008.jpg" alt="Malo Buchino 8">
         </div>
 
   - block: markdown
@@ -68,5 +73,14 @@ sections:
       text: |
         <div class="photo-grid">
           <img src="/uploads/photos/Malyovitsa/malyovitsa-001.jpg" alt="Malyovitsa 1">
+        </div>
+
+  - block: markdown
+    content:
+      title: Yastrebets
+      text: |
+        <div class="photo-grid">
+          <img src="/uploads/photos/Yastrebets/yastrebets-001.jpg" alt="Yastrebets 1">
+          <img src="/uploads/photos/Yastrebets/yastrebets-002.jpg" alt="Yastrebets 2">
         </div>
 ---
