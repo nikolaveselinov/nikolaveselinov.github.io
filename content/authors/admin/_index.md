@@ -19,7 +19,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Mathematics Enthusiast
+role: Mathematics Researcher
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
