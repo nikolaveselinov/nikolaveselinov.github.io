@@ -1,0 +1,50 @@
+.theorem {
+  border-left: 4px solid #007acc;
+  background: #f5faff;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  font-size: 1.05em;
+}
+.theorem strong {
+  color: #007acc;
+  margin-right: 0.5em;
+}
+.lemma, .conjecture, .corollary, .proposition {
+  border-left: 4px solid #007acc;
+  background: #f5faff;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  font-size: 1.05em;
+}
+.lemma strong      { color: #2b9348; }
+.conjecture strong { color: #f9844a; }
+.corollary strong  { color: #7209b7; }
+.proposition strong{ color: #4361ee; }
+.proof {
+  border-left: 4px solid #222;
+  background: #f9f9f9;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  font-size: 1.05em;
+}
+.proof em {
+  color: #222;
+  margin-right: 0.5em;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

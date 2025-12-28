@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>abtown_dataset_computed Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    #controls { margin-bottom: 2em; }
+    label { margin-right: 1em; }
+    #plot { width: 100%; max-width: 900px; height: 500px; }
+    #download { margin-left: 2em; }
+    .math-title { font-size: 1.2em; margin-bottom: 0.5em; }
+  </style>
+</head>
+<body>
+  <h1 id="main-title"></h1>
+  <div id="controls">
+    <label>
+      k:
+      <input type="number" id="k" value="3" min="3" step="1">
+    </label>
+    <label>
+      a:
+      <input type="number" id="a" value="0" step="1">
+    </label>
+    <label>
+      b:
+      <input type="number" id="b" value="0" step="1">
+    </label>
+    <button id="update">Update Plot</button>
+    <button id="download">Download CSV</button>
+  </div>
+  <div id="plot"></div>
+  <div class="math-title" id="math-title"></div>
+  <div id="table"></div>
+  <script>
+    let csvData = [];
+    let headers = [];
+    const csvUrl = '/uploads/abtown_dataset_computed.csv';
+
+    function filterData(k, a, b) {
+      // Filter for exact k, a, b, and only rows with numeric n and size
+      return csvData.filter(row =>
+        String(row.k) === String(k) &&
+        String(row.a) === String(a) &&
+        String(row.b) === String(b) &&
+        !isNaN(row.n) &&
+        !isNaN(row.size)
+      );
+    }
+
+    function plotData(filtered, k, a, b) {
+      Plotly.purge('plot');
+      if (filtered.length === 0) {
+        document.getElementById('plot').innerHTML = `No data for k = ${k}, a = ${a}, b = ${b}`;
+        document.getElementById('math-title').innerHTML = '';
+        return;
+      }
+      // Aggregate: for each n, pick the maximum size
+      const nToSize = {};
+      filtered.forEach(row => {
+        if (!(row.n in nToSize) || row.size > nToSize[row.n]) {
+          nToSize[row.n] = row.size;
+        }
+      });
+      const nVals = Object.keys(nToSize).map(Number).sort((a, b) => a - b);
+      const sizeVals = nVals.map(n => nToSize[n]);
+      Plotly.newPlot('plot', [{
+        x: nVals,
+        y: sizeVals,
+        mode: 'lines+markers',
+        type: 'scatter',
+        marker: { size: 8 }
+      }], {
+        xaxis: { title: 'n' },
+        yaxis: { title: '$|\\mathcal{F}|$' }, // Use LaTeX for y-axis label
+        title: ''
+      });
+      // Re-render MathJax for axis labels
+      setTimeout(() => {
+        if (window.MathJax) MathJax.typesetPromise();
+      }, 100);
+    }
+
+    function updateTable(filtered) {
+      let html = '<table border="1" cellpadding="4"><tr>';
+      headers.forEach(h => html += `<th>${h}</th>`);
+      html += '</tr>';
+      filtered.forEach(row => {
+        html += '<tr>';
+        headers.forEach(h => html += `<td>${row[h]}</td>`);
+        html += '</tr>';
+      });
+      html += '</table>';
+      document.getElementById('table').innerHTML = html;
+    }
+
+    function update() {
+      const k = document.getElementById('k').value;
+      const a = document.getElementById('a').value;
+      const b = document.getElementById('b').value;
+      const filtered = filterData(k, a, b);
+      plotData(filtered, k, a, b);
+      updateTable(filtered.slice(0, 20));
+    }
+
+    document.getElementById('update').onclick = update;
+    document.getElementById('download').onclick = function() {
+      saveAs(new Blob([Papa.unparse(csvData)], {type: "text/csv;charset=utf-8"}), "abtown_dataset_computed.csv");
+    };
+
+    Papa.parse(csvUrl, {
+      download: true,
+      header: true,
+      dynamicTyping: true,
+      complete: function(results) {
+        csvData = results.data;
+        headers = results.meta.fields;
+        update();
+      }
+    });
+
+    // Set the main title with LaTeX and render it
+    document.getElementById('main-title').innerHTML =
+      'Visualization of extremal sizes of \\((a,b)\\)-town\\(\\pmod k\\) families \\(\\mathcal{F} \\subseteq \\mathscr{P}(n)\\)';
+    if (window.MathJax) MathJax.typesetPromise();
+  </script>
+</body>
+</html>

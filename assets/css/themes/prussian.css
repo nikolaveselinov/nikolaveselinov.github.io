@@ -1,0 +1,14 @@
+/* Hugo Blox color theme: PRUSSIAN */
+:root {
+  --color-primary-50: 237 241 243;
+  --color-primary-100: 217 224 229;
+  --color-primary-200: 178 193 203;
+  --color-primary-300: 140 162 178;
+  --color-primary-400: 102 131 152;
+  --color-primary-500: 0 49 83;
+  --color-primary-600: 0 44 75;
+  --color-primary-700: 0 39 66;
+  --color-primary-800: 0 34 58;
+  --color-primary-900: 0 29 50;
+  --color-primary-950: 0 24 42;
+}
