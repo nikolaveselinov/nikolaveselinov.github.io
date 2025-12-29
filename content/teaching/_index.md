@@ -3,6 +3,7 @@ title: Teaching
 summary: My teaching materials and handouts
 date: 2025-12-29
 type: docs
+draft: true
 ---
 
 ## Course Materials
