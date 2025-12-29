@@ -19,4 +19,6 @@ abstract: A family $\mathcal F\subseteq\mathcal P(n)$ is an $(a,b)$-town $\pmod 
 links:
 - name: arXiv
   url: https://arxiv.org/abs/2510.00251
+- name: Computer-assisted cases
+  url: https://nikolaveselinov.github.io/abtown-visualization.html
 ---
