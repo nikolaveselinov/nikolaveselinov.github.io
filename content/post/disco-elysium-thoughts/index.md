@@ -3,6 +3,7 @@ title: Thoughts on Disco Elysium
 summary: A deep dive into one of the most unique and thought-provoking RPGs I've ever played.
 date: 2025-12-29
 math: false
+draft: true
 authors:
   - admin
 tags:
