@@ -155,3 +155,13 @@ renders as
 {{< table path="results.csv" header="true" caption="Table 1: My results" >}}
 
 ## Did you find this page helpful? Consider sharing it 🙌
+
+
+
+{{< proposition >}}
+If $\tilde d_i<\frac{1}{2}$ for every $i\in[n]$, then $S<\frac{n}{2}$.
+{{< /proposition >}}
+
+{{< proof >}}
+The sum of two even numbers is even.
+{{< /proof >}}

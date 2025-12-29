@@ -6,7 +6,6 @@ math: true
 authors:
   - admin
 tags:
-  - Research note
   - Set theory
   - Union-closed sets conjecture
   - Extremal set theory
@@ -52,14 +51,8 @@ $$
 $$
 {{< /conjecture >}}
 
-Through subsequent papers, the constant has been improved to $c\approx0.3823455$ ([arXiv:2212.12500v2](https://arxiv.org/abs/2212.12500v2)).
+Through subsequent papers, the constant has been improved to $c\approx0.3823455$ ([arXiv:2212.12500v2](https://arxiv.org/abs/2212.12500v2)). Evidence suggests it could be improved further, see the [work](https://arxiv.org/abs/2306.08824) of Liu from 2023.
 
+## Conclusion
 
-
-{{< proposition >}}
-If $\tilde d_i<\frac{1}{2}$ for every $i\in[n]$, then $S<\frac{n}{2}$.
-{{< /proposition >}}
-
-{{< proof >}}
-The sum of two even numbers is even.
-{{< /proof >}}
+I feel confident that progress will be made in the years to follow. It would be of great interest to see if a constant (or, in the best case, the complete) lower bound can be derived using some other approach, maybe even a purely combinatorial one.
