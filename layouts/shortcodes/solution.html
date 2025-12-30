@@ -1,6 +1,10 @@
 <div class="solution">
-  <em>
-    Solution{{ with .Get 0 }} ({{ . }}){{ end }}.
-  </em>
-  {{ .Inner }}
+  <details class="solution-toggle">
+    <summary>
+      <em>Solution{{ with .Get 0 }} ({{ . }}){{ end }}.</em>
+    </summary>
+    <div class="solution-body">
+      {{ .Inner }}
+    </div>
+  </details>
 </div>
