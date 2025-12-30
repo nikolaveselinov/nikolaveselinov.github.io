@@ -35,4 +35,13 @@ Firstly, we consider the subsequences as sets, and display their elements in inc
 
 Consider a partition of $A_n$ for some positive integer $n$. We represent it through a grid with the columns being different sets
 
+For instance, the partition $(1,4,5,8),(2,3),(6,9),(7)$ can be arranged in the grid below.
+
+| Subsequence 1 | Subsequence 2 | Subsequence 3 | Subsequence 4 |
+| --- | --- | --- | --- |
+| 1 |  |  | 7 |
+| 4 | 2 | 6 |  |
+| 5 | 3 | 9 |  |
+| 8 |  |  |  |
+
 {{< /solution >}}
