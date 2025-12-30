@@ -21,6 +21,7 @@ Today
 
 {{< problem >}} **(IZho 2015, P5)**
 Let $A_n$ be the set of partitions of the sequence $1,2,\ldots,n$ into several subsequences such that every two neighbouring terms of each subsequence have different parity, and $B_n$ the set of partitions of the sequence $1,2,\ldots,n$ into several subsequences such that all the terms of each subsequence have the same parity (for example, the partition $\{(1,4,5,8),(2,3),(6,9),(7)\}$ is an element of $A_9$, and the partition $\{(1,3,5),(2,4),(6)\}$ is an element of $B_6$).
+
 Prove that for every positive integer $n$ the sets $A_n$ and $B_{n+1}$ contain the same number of elements.
 {{< /problem >}}
 
