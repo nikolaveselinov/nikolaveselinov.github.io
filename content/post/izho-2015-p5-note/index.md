@@ -38,10 +38,10 @@ Consider a partition of $A_n$ for some positive integer $n$. We represent it thr
 For instance, the partition $(1,4,5,8),(2,3),(6,9),(7)$ can be arranged in the grid below.
 
 | Subsequence 1 | Subsequence 2 | Subsequence 3 | Subsequence 4 |
-| --- | --- | --- | --- |
-| 1 |  |  | 7 |
-| 4 | 2 | 6 |  |
-| 5 | 3 | 9 |  |
-| 8 |  |  |  |
+|:-------------:|:-------------:|:-------------:|:-------------:|
+| 1 | &nbsp; | &nbsp; | 7 |
+| 4 | 2 | 6 | &nbsp; |
+| 5 | 3 | 9 | &nbsp; |
+| 8 | &nbsp; | &nbsp; | &nbsp; |
 
 {{< /solution >}}
