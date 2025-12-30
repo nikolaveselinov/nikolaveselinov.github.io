@@ -165,6 +165,7 @@ awards:
 
 ## Biography
 
-About-Me
+I am a student at the Sofia High School of Mathematics, currently engaging in mathematical research. I am interested in math olympiads
 
+You can reach me at [nikola.veselinov.veselinov@gmail.com](mailto:nikola.veselinov.veselinov@gmail.com).
 You may also want to check out my [Photography](/photography) collection.
