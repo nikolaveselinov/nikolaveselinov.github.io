@@ -26,7 +26,7 @@ Prove that for every positive integer $n$ the sets $A_n$ and $B_{n+1}$ contain t
 
 {{< /problem >}}
 
-It might just be me, but the statement seems unnecessarily complicated (and the notation in the first example even looks a bit like a set of cycles in the ninth alternating group). Anyhow, I encourage you to try solving it on your own before looking at any solutions, as the problem admits several beautiful and intuitive methods, and you might even discover a new one yourself.
+It might just be me, but the statement seems unnecessarily complicated (and on a funnier note, the notation in the first example looks a bit like a set of cycles in the ninth alternating group). Anyhow, I encourage you to try solving it on your own before looking at any solutions, as the problem admits several beautiful and intuitive methods, and you might even discover a new one yourself.
 
 {{< solution >}}
 Since we aim to prove that two sets have the same number of elements, it is natural to attempt to construct a bijection from one to the other.

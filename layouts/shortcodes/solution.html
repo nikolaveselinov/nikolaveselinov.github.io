@@ -4,7 +4,7 @@
       <em>Solution{{ with .Get 0 }} ({{ . }}){{ end }}.</em>
     </summary>
     <div class="solution-body">
-      {{ .Inner }}
+      {{ .Inner | markdownify }}
     </div>
   </details>
 </div>
