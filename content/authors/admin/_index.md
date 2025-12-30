@@ -49,6 +49,7 @@ interests:
   - Extremal Set Theory
   - Linear Algebra Methods in Combinatorics
   - Topological Galois Theory
+  - Group Theory
 
 education:
 #  - area: PhD Artificial Intelligence
@@ -165,7 +166,8 @@ awards:
 
 ## Biography
 
-I am a student at the Sofia High School of Mathematics, currently engaging in mathematical research. I am interested in math olympiads
+I am a student at the Sofia High School of Mathematics, currently engaging in mathematical research.
 
 You can reach me at [nikola.veselinov.veselinov@gmail.com](mailto:nikola.veselinov.veselinov@gmail.com).
+
 You may also want to check out my [Photography](/photography) collection.
