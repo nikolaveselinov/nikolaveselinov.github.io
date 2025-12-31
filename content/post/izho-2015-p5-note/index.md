@@ -44,6 +44,39 @@ For instance, the partition $(1,4,5,8),(2,3),(6,9),(7)$ from the problem stateme
 | 5 | 3 | 9 | &nbsp; |
 | 8 | &nbsp; | &nbsp; | &nbsp; |
 
+### Step 1: Turn the grid into arrows
 
+Given such a grid, connect every entry to the entry immediately below it in the same column (whenever such an entry exists). In other words, if a column is
+$$x_1 < x_2 < \cdots < x_k,$$
+we draw the arrows
+$$x_1 \to x_2,\; x_2 \to x_3,\;\ldots,\; x_{k-1} \to x_k.$$
+This produces a directed graph on $\{1,2,\ldots,n\}$ which is a disjoint union of directed paths.
+
+### Step 2: Shift the arrow heads by $+1$
+
+Define a map $\Phi: A_n \to B_{n+1}$ as follows.
+
+Start with the vertex set $\{1,2,\ldots,n+1\}$, and for every arrow $a \to b$ coming from Step 1, draw instead the arrow
+$$a \to (b+1).$$
+
+If you prefer to think directly on the grid: this operation keeps each entry $a$ in place, but it “pushes” the entry immediately below it from $b$ to $b+1$. When you do this everywhere, equal numbers may appear (coming from different columns); in that case the corresponding columns are glued together. The glued columns are exactly the monochromatic subsequences in the image.
+
+Now take the directed paths of this new arrow diagram; each path gives a subsequence (read in the direction of the arrows), and isolated vertices give singleton subsequences. This is the element $\Phi(\pi)$ of $B_{n+1}$.
+
+Why is this in $B_{n+1}$? In $A_n$ every arrow $a\to b$ connects opposite parities. Therefore $a$ and $b+1$ have the same parity, so every path in the new diagram consists entirely of odd numbers or entirely of even numbers.
+
+Why is it still a disjoint union of paths? In the original diagram, each vertex has outdegree $\le 1$ and indegree $\le 1$. After the transformation $a\to b \mapsto a\to(b+1)$, outdegrees stay the same, and indegrees also stay $\le 1$ because no vertex $b$ can be the head of two different arrows in the original diagram.
+
+### Step 3: The inverse map
+
+Given a partition in $B_{n+1}$, draw arrows between consecutive elements in each subsequence (so arrows connect same parity). Then replace each arrow
+$$a \to c$$
+by
+$$a \to (c-1),$$
+and finally delete the vertex $n+1$ if it appears.
+
+Since $a$ and $c$ have the same parity, $a$ and $c-1$ have opposite parity, so the resulting paths correspond to an element of $A_n$.
+
+It is immediate that these two procedures undo each other (one shifts arrow heads by $+1$, the other shifts them back by $-1$), hence $\Phi$ is a bijection. Therefore $|A_n| = |B_{n+1}|$.
 
 {{< /solution >}}
