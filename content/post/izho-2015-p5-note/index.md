@@ -44,6 +44,30 @@ For instance, the partition $(1,4,5,8),(2,3),(6,9),(7)$ from the problem stateme
 | 5 | 3 | 9 | &nbsp; |
 | 8 | &nbsp; | &nbsp; | &nbsp; |
 
+### What the grid is really encoding (intuition)
+
+The grid is just a convenient way to remember the only condition defining $A_n$: inside each column, consecutive entries come from consecutive rows, hence they must have opposite parity.
+
+So each column comes with a list of “vertical adjacencies” (pairs of neighbours in that column). The bijection will act on those adjacencies.
+
+The trick is very simple:
+
+- If $a$ and $b$ have opposite parity, then $a$ and $b+1$ have the same parity.
+
+Thus, if we take every vertical adjacency $a$ (above) / $b$ (below) in the grid and replace it by an adjacency between $a$ and $b+1$, then columns stop being alternating and become monochromatic (all-odd or all-even). The extra point $n+1$ is needed only because the bottom element in some adjacency could be $n$, and we must be allowed to send it to $n+1$.
+
+You can literally see this as taking each vertical edge in the grid and “sliding” its lower endpoint one step to the right on the number line.
+
+### Example (the grid above)
+
+From the grid we read the vertical arrows (one per vertical adjacency):
+$$1\to 4,\; 4\to 5,\; 5\to 8,\; 2\to 3,\; 6\to 9.$$
+Now shift the lower endpoint of each arrow by $+1$:
+$$1\to 5,\; 4\to 6,\; 5\to 9,\; 2\to 4,\; 6\to 10.$$
+Following these arrows gives the monochromatic subsequences
+$$ (1,5,9),\quad (2,4,6,10),\quad (3),\quad (7),\quad (8),$$
+which is an element of $B_{10}$.
+
 ### Step 1: Turn the grid into arrows
 
 Given such a grid, connect every entry to the entry immediately below it in the same column (whenever such an entry exists). In other words, if a column is
