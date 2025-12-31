@@ -3,6 +3,7 @@ title: On Problem 5 of IZhO 2015
 summary: We give an alternative solution to the problem.
 date: 2025-12-30
 math: true
+draft: true
 authors:
   - admin
 tags:
