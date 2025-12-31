@@ -13,7 +13,7 @@ tags:
 
 ## Introduction
 
-Hello, dear reader!
+Greetings, dear reader!
 
 Today
 
