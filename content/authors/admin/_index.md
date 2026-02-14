@@ -49,7 +49,7 @@ interests:
   - Extremal Set Theory
   - Linear Algebra Methods in Combinatorics
   - Topological Galois Theory
-  - Group Theory
+  - (Infinite) Permutation Groups
 
 education:
 #  - area: PhD Artificial Intelligence
