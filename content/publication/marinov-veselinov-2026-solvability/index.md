@@ -1,5 +1,5 @@
 ---
-title: On the maximal size of $(a,b)$-town $\pmod k$ families
+title: Solvability of meromorphic equations in elementary functions
 authors:
 - Miroslav Marinov
 - Nikola Veselinov
